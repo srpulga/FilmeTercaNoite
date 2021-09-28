@@ -1,7 +1,8 @@
+
 using FilmeTercaNoite.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Data
+namespace FilmeTercaNoite.Data
 {
     public class DataContext : DbContext
     {

@@ -1,3 +1,4 @@
+using System;
 namespace FilmeTercaNoite.Models
 {
     public class Filme

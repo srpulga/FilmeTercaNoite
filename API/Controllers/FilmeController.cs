@@ -1,7 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using API.Data;
+using FilmeTercaNoite.Data;
+using FilmeTercaNoite.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FilmeTercaNoite.Controllers
@@ -18,22 +17,20 @@ namespace FilmeTercaNoite.Controllers
             _context = context;
         }
 
-        [HttpPost] //define metodo da requisição
+        [HttpPost] 
+        //define metodo da requisição
         //POST: api/filme/create
         [Route("create")]
-
         public IActionResult Create([FromBody] Filme filme)
         {
-            this.Filme = Filme;
             _context.Filmes.Add(filme);
             _context.SaveChanges();
             return Created("", filme);
         }
 
         [HttpGet]
-        //GET: api/produto/list
+        //GET: api/filme/list
         [Route("list")]
-
         public IActionResult List() => Ok(_context.Filmes.ToList());
 
     }
